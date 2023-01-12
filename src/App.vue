@@ -1,26 +1,78 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <body>
+    <img :src="randomImage" class="bg-image" />
+    <div class="content">
+      <div class="input-area">
+        <div class="card-area"><RomajiInput/></div>
+      </div>
+      <div class="output-area"><CardDisplayer/></div>
+    </div>
+  </body>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import RomajiInput from './components/RomajiInput.vue'
+import CardDisplayer from './components/CardDisplayer.vue'
+const context = require.context('./assets/bg/', true, /^\.\/.*\.(png|jpe?g|svg)$/)
+const images = context.keys().map(context)
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RomajiInput,
+    CardDisplayer
+  },
+  data() {
+    return {
+      images
+    }
+  },
+  computed: {
+    randomImage() {
+      return images[Math.floor(Math.random() * images.length)];
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 235px auto;
+  grid-column-gap: 5px;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.input-area {
+  height: 100vh;
+}
+
+.card-area {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.output-area {
+  height: 100vh;
 }
 </style>
+
+
+
