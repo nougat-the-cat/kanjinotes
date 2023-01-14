@@ -1,6 +1,6 @@
 <template>
   <body>
-    <img :src="randomImage" class="bg-image" />
+    <img :src="randomImage" class="bg-image"/>
     <div class="content">
       <div class="input-area">
         <div class="card-area"><RomajiInput/></div>
@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .bg-image {
   position: fixed;
   top: 0;
@@ -49,8 +49,7 @@ export default {
 
 .content {
   display: grid;
-  grid-template-columns: 235px auto;
-  grid-column-gap: 5px;
+  grid-template-columns: 310px auto;
   font-size: 16px;
   position: relative;
   z-index: 1;
@@ -60,13 +59,8 @@ export default {
 }
 
 .input-area {
-  height: 100vh;
-}
-
-.card-area {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .output-area {

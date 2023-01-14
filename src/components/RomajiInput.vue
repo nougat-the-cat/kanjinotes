@@ -1,42 +1,87 @@
 <template>
-    <div class="card-body">
-      <div><p>Enter your romaji:</p></div>
-      <div class="introduce-input">     
-        <form>
-          <div class="typing-area"><input type="text" name="input-romaji"></div>
-        </form>
-        <div class="submit"><input type="button" id="button" value="Ok!"></div>
-      </div>
+    <div class="card-body">    
+        <input class="typing-area" type="text" ref="searchInput" name="input-romaji" placeholder="Enter Japanese or Rо̄maji Term or Text">
+        <button class="submit-area" type="submit" v-on:click="searchTerm()" @keypress.enter="searchTerm()">🔎︎</button>
     </div>
 </template>
+
+<script>
+import Papa from 'papaparse'
+
+export default {
+  data() {
+    return {
+      csvData: [],
+      filteredData: []
+    }
+  },
+  methods: {
+    searchTerm() {
+        let searchTerm = this.$refs.searchInput.value;
+        if (searchTerm.trim().length === 0) {
+            return;
+        } else {
+            this.filteredData = this.csvData.filter(row => {
+            return row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase());
+          });
+            if (this.filteredData.length === 0) {
+                console.log("No matches found.");
+            } else {
+                console.log("Matched rows: ", this.filteredData);
+            }
+        }
+    },
+  },
+  mounted() {
+    Papa.parse('/vocabulary_test_set.csv', {
+        download: true,
+        header: true,
+        complete: (results) => {
+            this.csvData = results.data
+            this.csvData.forEach(row => {
+              if(typeof row.romaji !== "string") {
+                  console.log(`Value in row ${row} is not a string`)
+              }
+            })
+          }
+        })
+      }
+    }
+</script>
 
 
 <style>
 .card-body {
-  background-color: white;
-  border-radius: 3px;
-  align-self: center;
-  padding: 5px;
-  width:100%;
-  gap: 0;
-}
-
-.introduce-input {
+  width:300px;
   display: grid;
-  grid-template-columns: 85% 15%;
-  grid-gap:1px;
+  grid-template-columns: 91% 9%;
 }
 
-p {
-  margin: 0;
-}
-
-input{
-  width:100%;
+input {
+  width: 97%;
 }
 
 .typing-area {
-  margin-right:10px;
+  border-radius: 7px;
+  padding-right: 33.5px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  border-style: inset;
+  outline: none;
 }
+
+.submit-area {
+  background: #d1095e;
+  color: #fff;
+  border-radius: 5px;
+  height: 75%;
+  align-self: center;
+  border: none;
+}
+
+.submit-area:hover {
+    background-color: hsl(335, 92%, 55%); 
+}
+
 
 </style>

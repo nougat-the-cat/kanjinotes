@@ -1,4 +1,4 @@
-# kanjiwars-by-kanjinotes
+# kanjinotes
 
 ## Project setup
 ```
