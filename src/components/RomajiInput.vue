@@ -5,6 +5,7 @@
     </div>
 </template>
 
+
 <script>
 import Papa from 'papaparse'
 
@@ -15,6 +16,7 @@ export default {
       filteredData: []
     }
   },
+  
   methods: {
     searchTerm() {
         let searchTerm = this.$refs.searchInput.value;
@@ -32,6 +34,7 @@ export default {
         }
     },
   },
+  
   mounted() {
     Papa.parse('/vocabulary_test_set.csv', {
         download: true,
@@ -82,6 +85,4 @@ input {
 .submit-area:hover {
     background-color: hsl(335, 92%, 55%); 
 }
-
-
 </style>
