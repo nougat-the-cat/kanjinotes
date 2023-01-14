@@ -1,7 +1,7 @@
 <template>
     <div class="card-body">    
-        <input class="typing-area" type="text" ref="searchInput" name="input-romaji" placeholder="Enter Japanese or Rо̄maji Term or Text">
-        <button class="submit-area" type="submit" v-on:click="searchTerm()" @keypress.enter="searchTerm()">🔎︎</button>
+        <input class="typing-area" type="text" ref="searchInput" name="input-romaji" @keypress.enter="searchTerm()" placeholder="Enter Japanese or Rо̄maji Term or Text">
+        <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
     </div>
 </template>
 
