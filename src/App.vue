@@ -44,12 +44,12 @@ export default {
   padding: 0;
   margin: 0;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 310px auto;
+  grid-template-columns: 321px auto;
   font-size: 16px;
   position: relative;
   z-index: 0;

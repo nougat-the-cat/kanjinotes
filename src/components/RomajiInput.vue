@@ -1,8 +1,7 @@
 <template>
   <div class="card-body">
-    <input class="typing-area" v-model="inputValue" type="text" ref="searchInput" name="input-romaji" @keypress.enter="searchTerm()" placeholder="Enter Japanese or Rо̄maji Term or Text">
+    <span ref="typingArea" class="input typing-area" type="text" contenteditable="true" name="input-romaji" @keypress.enter="searchTerm()"></span>
     <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
-    <div class="display-value" v-if="inputValue">{{inputValue}}</div>
   </div>
 </template>
 
@@ -21,7 +20,7 @@ export default {
   
   methods: {
     searchTerm() {
-        let searchTerm = this.$refs.searchInput.value;
+        let searchTerm = this.$refs.typingArea.innerText;
         if (searchTerm.trim().length === 0) {
             return;
         } else {
@@ -50,11 +49,17 @@ export default {
               if(typeof row.romaji !== "string") {
                   console.log(`Value in row ${row} is not a string`)
               }
-            })
+          })
+        }
+      });
+            this.$refs.typingArea.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            this.searchTerm();
           }
-        })
-      }
-    }
+          }); 
+        }
+       }
 </script>
 
 
@@ -64,42 +69,32 @@ export default {
   display: grid;
   grid-template-columns: 91% 9%;
   background-color: white;
-  padding: 2px 6px 2px 2px;
+  padding: 2px 4px 2px 2px;
   border-radius: 7px;
-}
-
-input {
-  width: 97%;
 }
 
 .typing-area {
   border-radius: 7px;
-  padding-right: 33.5px;
   padding-top: 10px;
   padding-bottom: 8px;
   border-style: inset;
   outline: none;
+  width: 96.75%;
+  
 }
 
 .submit-area {
   background: #d1095e;
   color: #fff;
   border-radius: 5px;
-  height: 27.75px;
+  height: 28px;
+  width: 28px;
   align-self: center;
   border: none;
+  position: right;
 }
 
 .submit-area:hover {
     background-color: hsl(335, 92%, 50%); 
-}
-
-.display-value{
-  margin-left: 3px;
-  font-size: 14px;
-  width: 109.25%;
-  border-radius: 7px;
-  margin-top: 5px;
-  word-wrap: break-word;
 }
 </style>
