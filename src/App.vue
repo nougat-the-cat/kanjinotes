@@ -49,7 +49,7 @@ export default {
 
 .content {
   display: grid;
-  grid-template-columns: 321px auto;
+  grid-template-columns: 320px auto;
   font-size: 16px;
   position: relative;
   z-index: 0;

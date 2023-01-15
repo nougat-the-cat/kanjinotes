@@ -15,6 +15,7 @@
     "papaparse": "^5.3.2",
     "request-promise": "^4.2.6",
     "vue": "^3.2.13",
+    "vuex": "^4.1.0",
     "wanakana": "^5.0.2"
   },
   "devDependencies": {

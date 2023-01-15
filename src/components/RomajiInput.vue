@@ -2,6 +2,10 @@
   <div class="card-body">
     <span ref="typingArea" class="input typing-area" type="text" contenteditable="true" name="input-romaji" @keypress.enter="searchTerm()"></span>
     <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
+    <div class="button-container">
+      <button class="new-list">🔎︎ Add to new list</button>
+      <button class="existing-list">🔎︎ Add to existing list</button>
+    </div>
   </div>
 </template>
 
@@ -34,6 +38,7 @@ export default {
                 console.log("No matches found.");
             } else {
                 console.log("Matched rows: ", this.filteredData);
+                this.$store.dispatch('updateFilteredData', this.filteredData)
             }
         }
     },
@@ -58,8 +63,8 @@ export default {
             this.searchTerm();
           }
           }); 
-        }
-       }
+      }
+ }
 </script>
 
 
@@ -69,8 +74,10 @@ export default {
   display: grid;
   grid-template-columns: 91% 9%;
   background-color: white;
-  padding: 2px 4px 2px 2px;
+  padding: 2px 6.5px 2px 2px;
   border-radius: 7px;
+  text-align: left;
+  
 }
 
 .typing-area {
@@ -79,22 +86,58 @@ export default {
   padding-bottom: 8px;
   border-style: inset;
   outline: none;
-  width: 96.75%;
+  width: 96%;
   
 }
 
 .submit-area {
-  background: #d1095e;
+  background: hsl(335, 92%, 43%);
   color: #fff;
   border-radius: 5px;
   height: 28px;
   width: 28px;
   align-self: center;
   border: none;
-  position: right;
 }
 
 .submit-area:hover {
     background-color: hsl(335, 92%, 50%); 
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 3px;
+  justify-content: flex-end;
+  width: 97.85%;
+  padding-top: 3px;
+}
+
+.new-list {
+  background: hsl(172, 100%, 35%);
+  color: #fff;
+  border-radius: 5px;
+  height: 28px;
+  width: 118px;
+  border: none;
+  grid-column-start: 1;
+}
+
+.existing-list {
+  background: hsl(58, 100%, 41%);
+  color: #fff;
+  border-radius: 5px;
+  height: 28px;
+  width: 145px;
+  border: none;
+  grid-column-start: 2;
+}
+
+.new-list:hover {
+    background-color: hsl(172, 100%, 40%); 
+}
+
+.existing-list:hover {
+    background-color: hsl(58, 100%, 45%); 
 }
 </style>
