@@ -8,10 +8,16 @@
 </template>
 
 <script>
-import store from './store'
-
-console.log(store.state.filteredData)
-
+export default {
+  data() {
+    return {
+      store: require('../store.js').default
+    }
+  },
+  mounted() {
+    console.log(this.store.state.filteredData)
+  }
+}
 </script>
 
 <style>

@@ -1,9 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export const store = createStore({
   state: {
     filteredData: []
   },
@@ -16,5 +13,7 @@ export default new Vuex.Store({
     updateFilteredData ({ commit }, data) {
       commit('setFilteredData', data)
     }
-  }
+  },
 })
+
+export default store

@@ -1,16 +1,5 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import store from './components/store.js'
-import Vuex from 'vuex'
+import store from './store'
 
-Vue.use(Vuex);
-
-new Vue({
-    store,
-    render: h => h(App),
-  }).$mount('#App')
-
-
-App.use(store)
-
-App.mount('#App')
+createApp(App).use(store).mount('#app')

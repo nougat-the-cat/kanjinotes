@@ -1,13 +1,15 @@
 <template>
-  <body>
-    <img :src="randomImage" class="bg-image"/>
-    <div class="content">
-      <div class="input-area">
-        <div class="card-area"><RomajiInput/></div>
-      </div>
-      <div class="output-area"><CardDisplayer/></div>
-    </div>
-  </body>
+  <div id="app">
+    <body>
+      <img :src="randomImage" class="bg-image"/>
+        <div class="content">
+          <div class="input-area">
+            <div class="card-area"><RomajiInput/></div>
+          </div>
+          <div class="output-area"><CardDisplayer/></div>
+        </div>
+    </body>
+  </div>  
 </template>
 
 <script>
