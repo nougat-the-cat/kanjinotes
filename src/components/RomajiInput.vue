@@ -1,8 +1,9 @@
 <template>
-    <div class="card-body">    
-        <input class="typing-area" type="text" ref="searchInput" name="input-romaji" @keypress.enter="searchTerm()" placeholder="Enter Japanese or Rо̄maji Term or Text">
-        <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
-    </div>
+  <div class="card-body">
+    <input class="typing-area" v-model="inputValue" type="text" ref="searchInput" name="input-romaji" @keypress.enter="searchTerm()" placeholder="Enter Japanese or Rо̄maji Term or Text">
+    <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
+    <div class="display-value" v-if="inputValue">{{inputValue}}</div>
+  </div>
 </template>
 
 
@@ -13,7 +14,8 @@ export default {
   data() {
     return {
       csvData: [],
-      filteredData: []
+      filteredData: [],
+      inputValue: ""
     }
   },
   
@@ -23,8 +25,11 @@ export default {
         if (searchTerm.trim().length === 0) {
             return;
         } else {
-            this.filteredData = this.csvData.filter(row => {
-            return row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase());
+          this.filteredData = this.csvData.filter(row => {
+            return (row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
+            row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
+            row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
+            row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase()));
           });
             if (this.filteredData.length === 0) {
                 console.log("No matches found.");
@@ -58,6 +63,9 @@ export default {
   width:300px;
   display: grid;
   grid-template-columns: 91% 9%;
+  background-color: white;
+  padding: 2px 6px 2px 2px;
+  border-radius: 7px;
 }
 
 input {
@@ -77,12 +85,21 @@ input {
   background: #d1095e;
   color: #fff;
   border-radius: 5px;
-  height: 75%;
+  height: 27.75px;
   align-self: center;
   border: none;
 }
 
 .submit-area:hover {
-    background-color: hsl(335, 92%, 55%); 
+    background-color: hsl(335, 92%, 50%); 
+}
+
+.display-value{
+  margin-left: 3px;
+  font-size: 14px;
+  width: 109.25%;
+  border-radius: 7px;
+  margin-top: 5px;
+  word-wrap: break-word;
 }
 </style>

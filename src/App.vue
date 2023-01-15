@@ -52,7 +52,7 @@ export default {
   grid-template-columns: 310px auto;
   font-size: 16px;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   padding: 0;
   margin: 0;
   height: 100vh;
@@ -61,6 +61,7 @@ export default {
 .input-area {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .output-area {
