@@ -1,18 +1,20 @@
 <template>
-  <div class="card-container">
-    <div class="writing">hola</div>
-    <div class="romaji">hola</div>
-    <div class="kana">hola</div>
-    <div class="meaning">hola</div>
+  <div class="card-container" v-for="(row, index) in store.state.filteredData" :key="index">
+    <div class="writing">{{row.writing}}</div>
+    <div class="romaji">{{row.romaji}}</div>
+    <div class="kana">{{row.kana}}</div>
+    <div class="meaning">{{row.meaning}}</div>
   </div>
 </template>
+
+
 
 <script>
 export default {
   data() {
     return {
       store: require('../store.js').default
-    }
+    }  
   },
   mounted() {
     console.log(this.store.state.filteredData)

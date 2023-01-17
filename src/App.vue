@@ -51,7 +51,7 @@ export default {
 
 .content {
   display: grid;
-  grid-template-columns: 320px auto;
+  grid-template-columns: 310px auto;
   font-size: 16px;
   position: relative;
   z-index: 0;
@@ -63,6 +63,7 @@ export default {
 .input-area {
   display: flex;
   align-items: center;
+  width: 100%;
   z-index: 1;
 }
 
