@@ -35,6 +35,7 @@ export default {
   border-radius: 7px;
   grid-template-columns: auto 1fr;
   column-gap: 20px;
+  margin-top: 10px;
 }
 
 .reading-writing {
