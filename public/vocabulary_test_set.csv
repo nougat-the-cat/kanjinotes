@@ -202,7 +202,6 @@ konkai;now, this time, lately; 今回;こんかい
 kousoku;high-speed, rapid, express; 高速;こうそく
 kunren;training, drill, practice, discipline; 訓練;くんれん
 kyoukasho;textbook, coursebook, schoolbook; 教科書;きょうかしょ
-kyouryoku;cooperation, collaboration; 協力;きょうりょく
 kyouryoku;powerful, strong; 強力;きょうりょく
 kyuushuu;absorption, suction, attraction; 吸収;きゅうしゅう
 kyuusoku;rapid (e.g. progress); 急速;きゅうそく
@@ -257,6 +256,8 @@ shuukan;week; 週間;しゅうかん
 shuukan;weekly publication; 週刊;しゅうかん
 shuunyuu;income, receipts, revenue, salary; 収入;しゅうにゅう
 sokudo;speed, velocity, pace, rate; 速度;そくど
+suzume;tree sparrow;雀;すずめ
+sente hisshou;victory goes to the one who makes the first move, being quick to take action leads to victory, the early bird gets the worm;先手必勝;せんてひっしょう
 taihan;majority, more than half, most, largely, mainly; 大半;たいはん
 taikai;convention, rally, conference, tournament,; 大会;たいかい
 tashou;more or less, somewhat, a little, a few, some; 多少;たしょう
@@ -271,7 +272,7 @@ unten;operation, driving; 運転;うんてん
 waruguchi;slander, bad-mouthing, abuse, insult, speaking ill (of); 悪口;わるぐち
 yoake;dawn, daybreak; 夜明け;よあけ
 yobun;extra, excess, surplus; 余分;よぶん
-yomi;reading (of a kanji; situation; etc); 読み;よみ
+yomi;reading (of a kanji, situation, etc); 読み;よみ
 yonaka;middle of the night, dead of night; 夜中;よなか
 yuiitsu;only, sole, unique; 唯一;ゆいいつ
 yunyuu;import, importation, introduction; 輸入;ゆにゅう
@@ -333,6 +334,7 @@ wakeru;to divide, to split, to part, to separate; 分ける;わける
 waruguchi;slander, bad-mouthing, abuse, insult, speaking ill (of); 悪口;わるぐち
 yunyuu;import, importation, introduction; 輸入;ゆにゅう
 yushutsu;export, exportation​; 輸出;ゆしゅつ
+jidouhanbaiki;vending machine;自動販売機;じどうはんばいき
 akiraka;clear, obvious; 明らか;あきらか
 arata;new, fresh, novel; 新た;あらた
 dame;no good, cannot; 駄目 ;だめ
@@ -346,7 +348,6 @@ ippan;general, universal, ordinary, average, common; 一般;いっぱん
 jama;hindrance; 邪魔;じゃま
 kaigai;foreign, abroad, overseas; 海外;かいがい
 kousoku;high-speed, rapid, express; 高速;こうそく
-kyouryoku;powerful, strong; 強力;きょうりょく
 kyuugeki;sudden, abrupt, rapid, sharp, drastic, radical; 急激;きゅうげき
 kyuusoku;rapid (e.g. progress); 急速;きゅうそく
 majime;serious, earnest; 真面目 ;まじめ
@@ -361,6 +362,7 @@ yoroshii;(respectful) OK, all right; 宜しい;よろしい
 yuuri;advantageous, favorable, profitable; 有利;ゆうり
 zuibun;very, extremely, surprisingly, considerably, awfully; 随分;ずいぶん
 afurika;Africa; アフリカ;
+oukakumaku;diaphragm;横隔膜;おうかくまく
 aisatsu;to greet; 挨拶;あいさつ
 aji;flavor, taste​, uniqueness, attractiveness, experience; 味;あじ
 ajia;Asia; アジア;

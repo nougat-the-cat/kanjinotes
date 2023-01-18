@@ -1,15 +1,17 @@
 <template>
   <div class="card-container" v-for="(row, index) in store.state.filteredData" :key="index">
-    <div class="reading-writing">
-        <div class="kana">{{row.kana}}</div>
-        <div class="writing">{{row.writing}}</div>
+      <div>
+        <div class="reading-writing">
+          <ruby>
+            <rb>{{row.writing}}</rb>
+            <rt>{{row.kana}}</rt>
+          </ruby>
+        </div>
         <div class="romaji">{{row.romaji}}</div>
-    </div>
-    <div class="meaning">{{row.meaning}}</div>
+      </div>
+      <div class="meaning">{{row.meaning}}</div>
   </div>
 </template>
-
-
 
 <script>
 export default {
@@ -26,36 +28,31 @@ export default {
 
 <style>
 .card-container {
+  background-color: hsla(0, 0%, 100%, 0.65);
   display: grid;
-  background-color: rgba(255, 255, 255, 0.65);
-  grid-template-columns: 1fr 1fr;
   width: 637px;
   height: 100px;
   border-radius: 7px;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
 }
 
 .reading-writing {
-  display: grid;
-  grid-template-rows: 20px 50px 30px;
-  grid-template-columns: 1fr;
-  padding: none;
-  margin: none;
+  padding-top: 17.5px;
+  height: 57.5%;
 }
 
-.kana {
- font-size: smaller;
-}
-
-.writing {
-  font-size: 36px;
-  width: auto;
-  min-width: 55px;
+rt {
   font-family: 'Noto Serif JP', serif;
-  justify-self: start;
+  text-align: center;
+  font-size: 14px;
+}
+rb {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 36px;
 }
 
-.meaning {
-  grid-column-start: 2;
-  grid-row-start: 1;
+.romaji {
+  text-align: center;
 }
 </style>

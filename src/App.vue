@@ -58,7 +58,7 @@ export default {
   padding: 0;
   margin: 0;
   height: 100vh;
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
 
 .input-area {

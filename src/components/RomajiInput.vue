@@ -20,23 +20,23 @@ export default {
   
   methods: {
     searchTerm() {
-        let searchTerm = this.$refs.typingArea.innerText;
-        if (searchTerm.trim().length === 0) {
-            return;
+    let searchTerm = this.$refs.typingArea.innerText;
+    if (searchTerm.trim().length === 0) {
+      return;
+    } else {
+      this.filteredData = this.csvData.filter(row => {
+        return ((row.romaji && row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (row.meaning && row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (row.kana && row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (row.writing && row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase())));
+      });
+        if (this.filteredData.length === 0) {
+          console.log("No matches found.");
         } else {
-          this.filteredData = this.csvData.filter(row => {
-            return (row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
-            row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
-            row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase()) ||
-            row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase()));
-          });
-            if (this.filteredData.length === 0) {
-                console.log("No matches found.");
-            } else {
-                console.log("Matched rows: ", this.filteredData);
-                this.$store.dispatch('updateFilteredData', this.filteredData)
-            }
+          console.log("Matched rows: ", this.filteredData);
+          this.$store.dispatch('updateFilteredData', this.filteredData)
         }
+      }
     },
   },
   
@@ -62,8 +62,6 @@ export default {
       }
  }
 </script>
-
-
 
 <style>
 .card-body {
