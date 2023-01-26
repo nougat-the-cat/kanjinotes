@@ -8,7 +8,6 @@
 
 <script>
 import Papa from 'papaparse'
-
 export default {
   data() {
     return {
@@ -20,16 +19,21 @@ export default {
   
   methods: {
     searchTerm() {
-    let searchTerm = this.$refs.typingArea.innerText;
-    if (searchTerm.trim().length === 0) {
-      return;
-    } else {
-      this.filteredData = this.csvData.filter(row => {
-        return ((row.romaji && row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (row.meaning && row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (row.kana && row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (row.writing && row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase())));
-      });
+      let searchTerm = this.$refs.typingArea.innerText;
+      if (searchTerm.trim().length === 0) {
+        return;
+      } else {
+        let filteredData = this.csvData.filter(row => {
+          return (row.romaji && row.romaji.trim().toLowerCase() === searchTerm.toLowerCase()) ||
+                 (row.meaning && row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+                 (row.kana && row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+                 (row.writing && row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase()));
+        });
+        filteredData = filteredData.concat(this.csvData.filter(row => {
+          return (row.romaji && row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase())) &&
+                 (row.romaji && row.romaji.trim().toLowerCase() !== searchTerm.toLowerCase())
+        }));
+        this.filteredData = filteredData;
         if (this.filteredData.length === 0) {
           console.log("No matches found.");
         } else {
@@ -39,6 +43,7 @@ export default {
       }
     },
   },
+
   
   mounted() {
     Papa.parse('/vocabulary_test_set.csv', {
