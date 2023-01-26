@@ -35,6 +35,7 @@ export default {
   border-radius: 7px;
   grid-template-columns: auto 1fr;
   column-gap: 20px;
+  margin-bottom: 5px;
 }
 .reading-writing {
   padding-top: 17.5px;
