@@ -35,13 +35,12 @@ export default {
   border-radius: 7px;
   grid-template-columns: auto 1fr;
   column-gap: 20px;
+  margin-bottom: 10px;
 }
-
 .reading-writing {
   padding-top: 17.5px;
   height: 57.5%;
 }
-
 rt {
   font-family: 'Noto Serif JP', serif;
   text-align: center;
@@ -51,7 +50,6 @@ rb {
   font-family: 'Noto Serif JP', serif;
   font-size: 36px;
 }
-
 .romaji {
   text-align: center;
 }

@@ -1,4 +1,6 @@
 romaji;meaning;writing;kana
+san;three, 3;三;さん
+san;acid, sourness, sour taste;酸;さん
 akegata;dawn; 明け方;あけがた
 ashiato;footprints; 足跡;あしあと
 baibai;trade, buying and selling; 売買;ばいばい
@@ -29,7 +31,6 @@ jishuu;self-study, teaching oneself; 自習;じしゅう
 jisoku;speed (per hour); 時速;じそく
 jisshuu;practice, training, practical exercise, drill; 実習;じっしゅう
 kahansuu;majority; 過半数;かはんすう
-kaikai;opening of a meeting, starting (an event; etc); 開会;かいかい
 kaikan;meeting hall, assembly hall; 会館;かいかん
 kaiten;rotation, revolution, turning; 回転;かいてん
 kasoku;acceleration, speeding up; 加速;かそく
@@ -53,7 +54,7 @@ namiki;roadside tree, row of trees; 並木;なみき
 nyuusha;joining a company; 入社;にゅうしゃ
 rika;science (department, course); 理科;りか
 ryoushuu;receipt (of money), receiving; 領収;りょうしゅう
-sashimi;sashimi (raw sliced fish; shellfish or crustaceans); 刺身;さしみ
+sashimi;sashimi (raw sliced fish, shellfish or crustaceans); 刺身;さしみ
 seishounen;youth, young person; 青少年;せいしょうねん
 sekidou;equator; 赤道;せきどう
 shakaikagaku;social science; 社会科学;しゃかいかがく
@@ -93,7 +94,7 @@ ijiwaru;malicious, ill-tempered, unkind; 意地悪;いじわる
 iten;moving, relocation, change of address; 移転;いてん
 jishuu;self-study, teaching oneself; 自習;じしゅう
 jisshuu;practice, training, practical exercise, drill; 実習;じっしゅう
-kaikai;opening of a meeting, starting (an event; etc); 開会;かいかい
+kaikai;opening of a meeting, starting (an event, etc); 開会;かいかい
 kaiten;rotation, revolution, turning; 回転;かいてん
 kasoku;acceleration, speeding up; 加速;かそく
 kengaku;study by observation, field trip, tour, review, inspection; 見学;けんがく
@@ -181,7 +182,6 @@ kaiin;member; 会員;'かいいん
 kaigai;foreign, abroad, overseas; 海外;かいがい
 kaigou;meeting, assembly, gathering, association; 会合;かいごう
 kaikei;finance, account, treasurer, bill; 会計;かいけい
-kaishi;start, commencement, beginning, initiation​; 開始;かいし
 kamoku;(school) subject, curriculum, course; 科目;かもく
 kenri;right, privilege; 権利;けんり
 kihon;basics, fundamentals, basis, foundation; 基本;きほん
@@ -228,7 +228,6 @@ sayuu;left and right; 左右;さゆう
 seichou;growth, development, growing up, becoming an adult; 成長;せいちょう
 seihin;manufactured goods, finished goods, product; 製品;せいひん
 seinen;youth, young man; 青年;せいねん
-shigeki;stimulus, impetus, incentive, encouragement, motivation, provocation, excitement, thrill; 刺激;しげき
 shihon;funds, capital; 資本;しほん
 shina;article, item, thing, goods, stock, quality; 品;しな
 shinchou;body height, stature; 身長;しんちょう
@@ -266,6 +265,7 @@ tetsugaku;philosophy; 哲学;てつがく
 tetsuya;staying up all night; 徹夜;てつや
 tochi;plot of land, lot, soil; 土地;とち
 tokai;(big) city; 都会;とかい
+aki;autumn, fall;秋;あき
 tosho;books; 図書;としょ
 tsuugaku;commuting to school, school commute; 通学;つうがく
 unten;operation, driving; 運転;うんてん
@@ -313,11 +313,8 @@ nyuujou;entrance, admission, entering; 入場;にゅうじょう
 osameru;to supply, to dedicate, to make an offering, to pay; 収める;おさめる
 renzoku;continuation, succession, series; 連続;れんぞく
 rieki;profit, gains, benefit; 利益;りえき
-ryuugaku;studying abroad; 留学;りゅうがく
 sayuu;left and right; 左右;さゆう
-seichou;growth, development, growing up, becoming an adult; 成長;せいちょう
 shigeki;stimulus, impetus, incentive, encouragement, motivation, provocation, excitement, thrill; 刺激;しげき
-shingaku;entering a higher-level school (often university); 進学;しんがく
 shiyou;use, application, employment, utilization.; 使用;しよう
 shoumei;proof, verification, certification; 証明;しょうめい
 shoutai;invitation; 招待;しょうたい
@@ -372,6 +369,7 @@ akusesarii;accessory; アクセサリー ;
 amerika;America; アメリカ ;
 anaunsaa;announcer; アナウンサー;
 annai;to guide; 案内 ;あんない
+samidare;early-summer;五月雨;さみだれ
 anshin;peace of mind; 安心;あんしん
 anzen;safety, security​; 安全 ;あんぜん
 arubaito;part-time job; アルバイト;
@@ -568,7 +566,7 @@ miyako;capital; 都 ;みやこ
 mizuumi;lake; 湖 ;みずうみ
 momen;cotton (material); 木綿;もめん
 mori;forest; 森;もり
-mukashi;olden days; former; 昔;むかし
+mukashi;olden days, former; 昔;むかし
 muri;impossible; 無理 ;むり
 mushi;insect; 虫;むし
 musuko;son; 息子;むすこ
@@ -644,7 +642,7 @@ setsumei;explanation; 説明;せつめい
 shachou;company president, manager, director; 社長;しゃちょう
 shakai;society, public, community, the world; 社会;しゃかい
 shi;city; 市;し
-shiai;match;game; 試合;しあい
+shiai;match, game; 試合;しあい
 shikata;way, method; 仕方;しかた
 shiken;examination; 試験 ;しけん
 shima;island; 島;しま
@@ -871,7 +869,6 @@ seikatsu;to live; 生活 ;せいかつ
 seisan;production; 生産;せいさん
 sensou;war; 戦争;せんそう
 setsumei;explanation; 説明;せつめい
-shiai;match;game; 試合;しあい
 shikaru;to scold; 叱る;しかる
 shiken;examination; 試験 ;しけん
 shippai;failure; 失敗 ;しっぱい
@@ -890,7 +887,7 @@ susumu;to make progress; 進む;すすむ
 suteru;to throw away; 捨てる;すてる
 taiin;leaving hospital, discharge from hospital; 退院;'たいいん
 tanjou;birth; 誕生 ;たんじょう
-taoreru; to fall (over; down); 倒れる ;たおれる
+taoreru; to fall (over, down); 倒れる ;たおれる
 tariru;to be sufficient, to be enough; 足りる;たりる
 tasu;to add (numbers / something); 足す;たす
 tateru;to build; 建てる ;たてる
