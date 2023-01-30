@@ -51,7 +51,7 @@ export default {
 
 .content {
   display: grid;
-  grid-template-columns: 310px auto;
+  grid-template-columns: 610px auto;
   font-size: 16px;
   position: relative;
   z-index: 0;

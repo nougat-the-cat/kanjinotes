@@ -1,10 +1,11 @@
 <template>
-  <div class="card-body">
+  <div class="input-body">
     <span ref="typingArea" class="input typing-area" type="text" contenteditable="true" name="input-romaji" @keypress.enter="searchTerm()"></span>
-      <button class="submit-area" type="submit" v-on:click="searchTerm()">🔎︎</button>
+      <button class="search" @click="searchTerm()">🔎︎</button>
+      <button class="add-old" @click="myNewMethod1">🔎︎ Add to new list</button>
+      <button class="add-new" @click="myNewMethod2">🔎︎ Add to existing list</button>
   </div>
 </template>
-
 
 <script>
 import Papa from 'papaparse'
@@ -24,14 +25,14 @@ export default {
         return;
       } else {
         let filteredData = this.csvData.filter(row => {
-          return (row.romaji && row.romaji.trim().toLowerCase() === searchTerm.toLowerCase()) ||
-                 (row.meaning && row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
-                 (row.kana && row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
-                 (row.writing && row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase()));
+          return (row.romaji && row.romaji.trim().toLowerCase() === searchTerm.toLowerCase());
         });
         filteredData = filteredData.concat(this.csvData.filter(row => {
           return (row.romaji && row.romaji.trim().toLowerCase().includes(searchTerm.toLowerCase())) &&
-                 (row.romaji && row.romaji.trim().toLowerCase() !== searchTerm.toLowerCase())
+                 (row.romaji && row.romaji.trim().toLowerCase() !== searchTerm.toLowerCase()) ||
+                 (row.kana && row.kana.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+                 (row.writing && row.writing.trim().toLowerCase().includes(searchTerm.toLowerCase())) ||
+                 (row.meaning && row.meaning.trim().toLowerCase().includes(searchTerm.toLowerCase()))
         }));
         this.filteredData = filteredData;
         if (this.filteredData.length === 0) {
@@ -43,8 +44,7 @@ export default {
       }
     },
   },
-  
-  
+
   mounted() {
     Papa.parse('/vocabulary_test_set.csv', {
         download: true,
@@ -53,6 +53,15 @@ export default {
             this.csvData = results.data
             this.csvData.forEach(row => {
               if(typeof row.romaji !== "string") {
+                  console.log(`Value in row ${row} is not a string`)
+              }
+              if(typeof row.kana !== "string") {
+                  console.log(`Value in row ${row} is not a string`)
+              }
+              if(typeof row.writing !== "string") {
+                  console.log(`Value in row ${row} is not a string`)
+              }
+              if(typeof row.meaning !== "string") {
                   console.log(`Value in row ${row} is not a string`)
               }
           })
@@ -69,13 +78,14 @@ export default {
 </script>
 
 <style>
-.card-body {
-  width: 300px;
+.input-body {
+  width: 600px;
   display: grid;
-  grid-template-columns: 91% 9%;
+  grid-template-columns: 53% auto auto auto;
   background-color: white;
   padding: 2px 2px 2px 2px;
   border-radius: 7px;
+  gap: 1px;
 }
 input {
   width: 100%;
@@ -85,17 +95,38 @@ input {
   border-style: inset;
   outline: none;
 }
-.submit-area {
+.search {
   background: #d1095e;
   color: #fff;
   border-radius: 5px;
-  height: 75%;
+  height: 27.75px;
+  width: 27.75px;
+  align-self: center;
+  border: none;
+}
+.add-old {
+  background: #d1095e;
+  color: #fff;
+  border-radius: 5px;
   height: 27.75px;
   align-self: center;
   border: none;
 }
-.submit-area:hover {
-    background-color: hsl(335, 92%, 55%); 
-    background-color: hsl(335, 92%, 50%); 
+.add-new {
+  background: #d1095e;
+  color: #fff;
+  border-radius: 5px;
+  height: 27.75px;
+  align-self: center;
+  border: none;
+}
+.search:hover {
+  background-color: hsl(335, 92%, 55%); 
+}
+.add-old:hover {
+  background-color: hsl(335, 92%, 55%); 
+}
+.add-new:hover {
+  background-color: hsl(335, 92%, 55%); 
 }
 </style>
