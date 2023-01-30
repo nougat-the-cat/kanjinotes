@@ -125,7 +125,6 @@ toumei;transparent, clear; 透明;とうめい
 akari;light, illumination, glow, gleam; 明かり;あかり
 akuma;devil, demon, fiend, Satan; 悪魔;あくま
 anki;memorization, learning by heart; 暗記;あんき
-arata;new, fresh, novel; 新た;あらた
 atsumari;gathering, meeting, assembly, collection, attendance; 集まり;あつまり
 bubun;portion, section, part; 部分;ぶぶん
 bun;part, segment, share, ration; 分;ぶん
@@ -212,7 +211,6 @@ makka;bright red, deep red, flushed (of face); 真っ赤;まっか
 manichi;emergency, unlikely event​, by some chance, by some possibility; 万一;まんいち
 manzoku;satisfaction, contentment,​ sufficient, enough; 満足;まんぞく
 meshi;cooked rice, meal; 飯;めし
-mikata;friend, ally, supporter, taking sides with, supporting; 味方;みかた
 miryoku;charm, fascination, glamour, attraction, appeal; 魅力;みりょく
 mokuyou;Thursday; 木曜;もくよう
 nakaba;middle, half, semi, halfway, partly; 半ば;なかば
@@ -422,7 +420,7 @@ gasorinsutando;petrol station; ガソリンスタンド;
 gasu;petrol; ガス;
 genin;cause; 原因;げんいん
 geshuku;lodging; 下宿 ;げしゅく
-gijutsu;art;technology;skill; 技術;ぎじゅつ
+gijutsu;art,technology,skill; 技術;ぎじゅつ
 gochisou;a feast; ごちそう;
 gomi;rubbish; ごみ ;
 goshujin;your husband, her husband; ご主人;ごしゅじん
